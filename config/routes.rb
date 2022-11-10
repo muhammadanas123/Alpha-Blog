@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   get "about", to: "articles#about"
 
-  resources :articles, only: [:show]
+  resources :articles, only: [:show, :index]
   # Defines the root path route ("/")
   # root "articles#index"
 end
