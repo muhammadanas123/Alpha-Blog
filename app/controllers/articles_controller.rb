@@ -1,5 +1,10 @@
 class ArticlesController < ApplicationController
 
+
+    def home 
+
+        @articles = Article.all
+    end
     def show
         @article = Article.find(params[:id])
     end
@@ -42,7 +47,11 @@ class ArticlesController < ApplicationController
             render "edit"
         end
 
-        end
+    end
 
-
+    def destroy
+        @article = Article.find(params[:id])
+        @article.destroy
+        redirect_to article_path
+    end
 end
